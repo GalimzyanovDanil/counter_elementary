@@ -1,5 +1,6 @@
-import 'package:counter_elementary/src/common/widgets/di_scope/di_scope.dart';
+
 import 'package:counter_elementary/src/features/app/di/app_scope.dart';
+import 'package:counter_elementary/src/features/common/widgets/di_scope/di_scope.dart';
 import 'package:counter_elementary/src/features/counter/screen/counter/counter_screen.dart';
 import 'package:flutter/material.dart';
 

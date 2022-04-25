@@ -30,14 +30,14 @@ class CounterScreen extends ElementaryWidget<ICounterWidgetModel> {
         children: [
           FloatingActionButton(
             child: const Icon(Icons.add),
-            onPressed: () => wm.increment(),
+            onPressed: () => wm.onIncrementButton(),
           ),
           const SizedBox(
             width: 10,
           ),
           FloatingActionButton(
             child: const Icon(Icons.remove),
-            onPressed: () => wm.decrement(),
+            onPressed: () => wm.onDecrementButton(),
           ),
         ],
       ),

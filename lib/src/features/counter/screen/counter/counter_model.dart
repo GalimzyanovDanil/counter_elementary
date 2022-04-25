@@ -1,19 +1,24 @@
+import 'package:counter_elementary/src/features/counter/service/counter_service.dart';
 import 'package:elementary/elementary.dart';
 
 /// Default Elementary model for Counter module
 class CounterModel extends ElementaryModel {
-  int get result => _result;
+  final ICounterService _counterService;
+  int get initValue => _initValue;
+  late int _initValue;
 
-  late int _result;
-
-  CounterModel(ErrorHandler errorHandler) : super(errorHandler: errorHandler);
+  CounterModel(
+      {required ICounterService counterService,
+      required ErrorHandler errorHandler})
+      : _counterService = counterService,
+        super(errorHandler: errorHandler);
 
   @override
   void init() {
-    _result = 0;
+    _initValue = _counterService.currentValue;
     super.init();
   }
 
-  int increment() => _result = _result + 1;
-  int decrement() => _result = _result - 1;
+  int increment() => _counterService.increment();
+  int decrement() => _counterService.decrement();
 }

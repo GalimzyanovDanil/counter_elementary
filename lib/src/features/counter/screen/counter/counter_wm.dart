@@ -7,14 +7,18 @@ import 'package:provider/provider.dart';
 
 abstract class ICounterWidgetModel extends IWidgetModel {
   ListenableState<int> get countResult;
-  void increment();
-  void decrement();
+  void onIncrementButton();
+  void onDecrementButton();
 }
 
 CounterWidgetModel defaultCounterWidgetModelFactory(BuildContext context) {
   final appDependencies = context.read<IAppScope>();
   final errorHandler = appDependencies.errorHandler;
-  final model = CounterModel(errorHandler);
+
+  final model = CounterModel(
+    counterService: appDependencies.counterService,
+    errorHandler: errorHandler,
+  );
 
   return CounterWidgetModel(model);
 }
@@ -32,18 +36,18 @@ class CounterWidgetModel extends WidgetModel<CounterScreen, CounterModel>
   void initWidgetModel() {
     super.initWidgetModel();
 
-    final initValue = model.result;
+    final initValue = model.initValue;
     _countResult = StateNotifier<int>(initValue: initValue);
   }
 
   @override
-  void decrement() {
+  void onDecrementButton() {
     final result = model.decrement();
     _countResult.accept(result);
   }
 
   @override
-  void increment() {
+  void onIncrementButton() {
     final result = model.increment();
     _countResult.accept(result);
   }
