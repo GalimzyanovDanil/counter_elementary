@@ -1,4 +1,4 @@
-import 'package:counter_elementary/src/features/common/service/counter.dart';
+import 'package:counter_elementary/src/features/common/service/counter_storage.dart';
 import 'package:counter_elementary/src/features/counter/domain/counter_repository.dart';
 import 'package:counter_elementary/src/features/counter/service/counter_service.dart';
 import 'package:counter_elementary/src/utils/default_error_handler.dart';

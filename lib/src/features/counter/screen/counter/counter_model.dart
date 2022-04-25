@@ -7,10 +7,10 @@ class CounterModel extends ElementaryModel {
   int get initValue => _initValue;
   late int _initValue;
 
-  CounterModel(
-      {required ICounterService counterService,
-      required ErrorHandler errorHandler})
-      : _counterService = counterService,
+  CounterModel({
+    required ICounterService counterService,
+    required ErrorHandler errorHandler,
+  })  : _counterService = counterService,
         super(errorHandler: errorHandler);
 
   @override

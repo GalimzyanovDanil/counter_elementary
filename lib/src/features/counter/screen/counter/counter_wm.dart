@@ -14,9 +14,10 @@ abstract class ICounterWidgetModel extends IWidgetModel {
 CounterWidgetModel defaultCounterWidgetModelFactory(BuildContext context) {
   final appDependencies = context.read<IAppScope>();
   final errorHandler = appDependencies.errorHandler;
+  final counterService = appDependencies.counterService;
 
   final model = CounterModel(
-    counterService: appDependencies.counterService,
+    counterService: counterService,
     errorHandler: errorHandler,
   );
 

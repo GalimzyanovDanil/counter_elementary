@@ -1,4 +1,4 @@
-import 'package:counter_elementary/src/features/common/service/counter.dart';
+import 'package:counter_elementary/src/features/common/service/counter_storage.dart';
 
 abstract class ICounterRepository {
   int get currentValue;
