@@ -1,8 +1,9 @@
+import 'package:counter_elementary/src/features/app/di/app_scope.dart';
 import 'package:counter_elementary/src/features/counter/screen/counter/counter_model.dart';
 import 'package:counter_elementary/src/features/counter/screen/counter/counter_screen.dart';
-import 'package:counter_elementary/src/utils/default_error_handler.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 abstract class ICounterWidgetModel extends IWidgetModel {
   ListenableState<int> get countResult;
@@ -10,8 +11,9 @@ abstract class ICounterWidgetModel extends IWidgetModel {
   void decrement();
 }
 
-CounterWidgetModel defaultCounterWidgetModelFactory(BuildContext _) {
-  final errorHandler = DefaultErrorHandler();
+CounterWidgetModel defaultCounterWidgetModelFactory(BuildContext context) {
+  final appDependencies = context.read<IAppScope>();
+  final errorHandler = appDependencies.errorHandler;
   final model = CounterModel(errorHandler);
 
   return CounterWidgetModel(model);
