@@ -2,8 +2,6 @@ import 'package:counter_elementary/src/features/counter/screen/counter/counter_w
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 
-
-
 /// Main widget for Counter module
 class CounterScreen extends ElementaryWidget<ICounterWidgetModel> {
   const CounterScreen({
@@ -30,14 +28,14 @@ class CounterScreen extends ElementaryWidget<ICounterWidgetModel> {
         children: [
           FloatingActionButton(
             child: const Icon(Icons.add),
-            onPressed: () => wm.onIncrementButton(),
+            onPressed:wm.onIncrementButton,
           ),
           const SizedBox(
             width: 10,
           ),
           FloatingActionButton(
             child: const Icon(Icons.remove),
-            onPressed: () => wm.onDecrementButton(),
+            onPressed: wm.onDecrementButton,
           ),
         ],
       ),
