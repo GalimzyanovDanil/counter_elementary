@@ -1,6 +1,7 @@
 # counter_elementary
 
 Implementation of the counter on Elementary.
+Adding GitHub Actions on formatting code.
 
 ## Getting Started
 
