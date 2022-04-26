@@ -27,6 +27,6 @@ jobs:
         run: flutter analyze --fatal-warnings --fatal-infos .
 
       - name: Run formatter
-        run: flutter format --fix .
+        run: flutter format --set-exit-if-changed .
         
 
