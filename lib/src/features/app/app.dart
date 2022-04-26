@@ -1,4 +1,3 @@
-
 import 'package:counter_elementary/src/features/app/di/app_scope.dart';
 import 'package:counter_elementary/src/features/common/widgets/di_scope/di_scope.dart';
 import 'package:counter_elementary/src/features/counter/screen/counter/counter_screen.dart';
@@ -13,7 +12,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   late final IAppScope _scope;
-  
+
   @override
   void initState() {
     _scope = AppScope();
