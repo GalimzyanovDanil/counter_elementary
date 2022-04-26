@@ -12,6 +12,9 @@ jobs:
   analysis:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Install Flutter
         uses: subosito/flutter-action@v1
         with:
