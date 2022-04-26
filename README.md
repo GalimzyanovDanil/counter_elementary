@@ -1,6 +1,6 @@
 # counter_elementary
 
-A new Flutter project.
+Implementation of the counter on Elementary.
 
 ## Getting Started
 
